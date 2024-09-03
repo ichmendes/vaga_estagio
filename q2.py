@@ -12,3 +12,4 @@ Type "help", "copyright", "credits" or "license()" for more information.
 ... if pertence_fibonacci(numero):
 ...     print(f"{numero} pertence à sequência de Fibonacci.")
 ... else:
+...     print(f"{numero} não pertence à sequência de Fibonacci.")
