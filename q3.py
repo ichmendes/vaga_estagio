@@ -1,14 +1,22 @@
-Python 3.12.5 (tags/v3.12.5:ff3bc82, Aug  6 2024, 20:45:27) [MSC v.1940 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
->>> def pertence_fibonacci(n):
-...     a, b = 0, 1
-...     while b <= n:
-...         if b == n:
-...             return True
-...         a, b = b, a + b
-...     return False
-... 
-... numero = int(input("Informe um número: "))
-... if pertence_fibonacci(numero):
-...     print(f"{numero} pertence à sequência de Fibonacci.")
-... else:
+import json
+
+# Exemplo de dados em JSON (substitua por dados reais)
+dados = '''[
+    {"dia": 1, "faturamento": 1000.0},
+    {"dia": 2, "faturamento": 2000.0},
+    {"dia": 3, "faturamento": 1500.0},
+    {"dia": 4, "faturamento": 0.0},
+    {"dia": 5, "faturamento": 3000.0}
+]'''
+
+faturamento = json.loads(dados)
+valores = [dia['faturamento'] for dia in faturamento if dia['faturamento'] > 0]
+media_mensal = sum(valores) / len(valores)
+
+menor = min(valores)
+maior = max(valores)
+dias_acima_media = sum(1 for valor in valores if valor > media_mensal)
+
+print(f"Menor valor: {menor}")
+print(f"Maior valor: {maior}")
+print(f"Dias acima da média: {dias_acima_media}")
